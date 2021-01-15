@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-widgetProjetList() {
+widgetTable() {
   return Container(
     child: Table(
       border: TableBorder.all(),
