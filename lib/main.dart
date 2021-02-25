@@ -9,34 +9,28 @@ class MyApp extends StatelessWidget {
       title: "Aula 3",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.blue),
-      home: buildListView(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Lista dinâmica'),
+        ),
+        body: buildListView(),
+      ),
     );
   }
 
   buildListView() {
-    return ListView(
-      children: [
-        ListTile(
-          title: Text('Texto'),
-          subtitle: Text('Meu Texto'),
-          leading: Icon(Icons.add_location),
-          trailing: Icon(Icons.add_shopping_cart),
-          selected: true,
-          onTap: () {
-            print('Tap');
-          },
-        ),
-        ListTile(
-          title: Text('Texto'),
-          subtitle: Text('Meu Texto'),
-          leading: Icon(Icons.add_to_photos),
-          trailing: Icon(Icons.add_box),
-          enabled: true,
-          onLongPress: () {
-            print('Long');
-          },
-        ),
-      ],
-    );
+    final itens = List<String>.generate(1000, (i) => "Item $i");
+
+    return ListView.builder(
+        itemCount: itens.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Icon(Icons.arrow_right),
+            title: Text('${itens[index]}'),
+            onTap: () {
+              debugPrint('${itens[index]} foi selecionado');
+            },
+          );
+        });
   }
 }
