@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_aula03/models/userModel.dart';
+import 'package:flutter_aula03/services/api.dart';
 
 void main() => runApp(MyApp());
 
@@ -6,31 +10,58 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Aula 3",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.blue),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Lista dinâmica'),
-        ),
-        body: buildListView(),
+      home: BuildListView(),
+    );
+  }
+}
+
+class BuildListView extends StatefulWidget {
+  @override
+  _BuildListViewState createState() => _BuildListViewState();
+}
+
+class _BuildListViewState extends State<BuildListView> {
+  var users = List<User>();
+
+  _getUsers() {
+    API.getUsers().then((response) {
+      setState(() {
+        Iterable lista = json.decode(response.body);
+        users = lista.map((model) => User.fromMap(model)).toList();
+      });
+    });
+  }
+
+  _BuildListViewState() {
+    _getUsers();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Lista de Usuarios'),
       ),
+      body: listaUsuarios(),
     );
   }
 
-  buildListView() {
-    final itens = List<String>.generate(1000, (i) => "Item $i");
-
+  listaUsuarios() {
     return ListView.builder(
-        itemCount: itens.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: Icon(Icons.arrow_right),
-            title: Text('${itens[index]}'),
-            onTap: () {
-              debugPrint('${itens[index]} foi selecionado');
-            },
-          );
-        });
+      itemCount: users.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          leading: Icon(Icons.person),
+          title: Text(
+            users[index].name,
+          ),
+          subtitle: Text(
+            users[index].email,
+          ),
+        );
+      },
+    );
   }
 }
