@@ -23,19 +23,12 @@ class BuildListView extends StatefulWidget {
 }
 
 class _BuildListViewState extends State<BuildListView> {
-  var users = List<User>();
+  Future<List<User>> users;
 
-  _getUsers() {
-    API.getUsers().then((response) {
-      setState(() {
-        Iterable lista = json.decode(response.body);
-        users = lista.map((model) => User.fromMap(model)).toList();
-      });
-    });
-  }
-
-  _BuildListViewState() {
-    _getUsers();
+  @override
+  void initState() {
+    super.initState();
+    users = API.getUsers();
   }
 
   @override
@@ -44,11 +37,25 @@ class _BuildListViewState extends State<BuildListView> {
       appBar: AppBar(
         title: Text('Lista de Usuarios'),
       ),
-      body: listaUsuarios(),
+      body: FutureBuilder(
+        future: users,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            // return Text(snapshot.data[0].name);
+            return listaUsuarios(snapshot.data);
+          } else if (snapshot.hasError) {
+            return Text(snapshot.error);
+          }
+
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
     );
   }
 
-  listaUsuarios() {
+  listaUsuarios(users) {
     return ListView.builder(
       itemCount: users.length,
       itemBuilder: (context, index) {
