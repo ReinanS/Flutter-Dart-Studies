@@ -1,6 +1,5 @@
 class Conta {
-  Cliente cliente = Cliente();
-  String _titular;
+  Cliente _titular = Cliente();
   int _numero;
   String _agencia;
   double _saldo;
@@ -9,8 +8,13 @@ class Conta {
   Conta(this._titular, this._numero, this._agencia, this._saldo,
       this._dataDeAbertura);
 
-  void saca(double valor) {
-    if (_saldo > 0) _saldo -= valor;
+  bool saca(double valor) {
+    if (_saldo < valor)
+      return false;
+    else {
+      _saldo -= valor;
+      return false;
+    }
   }
 
   void deposita(double valor) {
@@ -24,9 +28,22 @@ class Conta {
   void displaySaldo() {
     print(_saldo);
   }
+
+  bool transferePara(Conta destino, double valor) {
+    bool retirou = this.saca(valor);
+    if (retirou == false)
+      return false;
+    else {
+      destino.deposita(valor);
+      return true;
+    }
+  }
 }
 
 class Cliente {
+  Cliente({this.nome = '', this.sobrenome = '', this.cpf = ''});
+
   String nome;
+  String sobrenome;
   String cpf;
 }
