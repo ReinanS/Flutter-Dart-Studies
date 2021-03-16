@@ -25,10 +25,6 @@ class Conta {
     return _saldo * 0.1;
   }
 
-  void displaySaldo() {
-    print(_saldo);
-  }
-
   bool transferePara(Conta destino, double valor) {
     bool retirou = this.saca(valor);
     if (retirou == false)
@@ -37,6 +33,16 @@ class Conta {
       destino.deposita(valor);
       return true;
     }
+  }
+
+  void recuperaDadosParaImpressao() {
+    print("Titular: ${_titular.nome}");
+    print("Numero: $_numero");
+    print("Agência: $_agencia");
+    print("Data de Abertura: $_dataDeAbertura");
+
+    print("Saldo atual: $_saldo");
+    print("Rendimento Mensal: ${calculaRendimento()}");
   }
 }
 
