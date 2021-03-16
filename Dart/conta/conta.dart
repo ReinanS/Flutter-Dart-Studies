@@ -35,14 +35,15 @@ class Conta {
     }
   }
 
-  void recuperaDadosParaImpressao() {
-    print("Titular: ${_titular.nome}");
-    print("Numero: $_numero");
-    print("Agência: $_agencia");
-    print("Data de Abertura: $_dataDeAbertura");
+  String recuperaDadosParaImpressao() {
+    String dados = "Titular: " + _titular.nome;
+    dados += "\nNúmero: $_numero";
+    dados += "\nAgência: $_agencia";
+    dados += "\nData de Abertura: $_dataDeAbertura";
+    dados += "\nSaldo atual: $_saldo";
+    dados += "\nRendimento Mensal: ${calculaRendimento()}";
 
-    print("Saldo atual: $_saldo");
-    print("Rendimento Mensal: ${calculaRendimento()}");
+    return dados;
   }
 }
 
