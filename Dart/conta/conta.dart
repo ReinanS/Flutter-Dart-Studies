@@ -1,9 +1,12 @@
+import 'cliente.dart';
+import 'data.dart';
+
 class Conta {
   Cliente _titular = Cliente();
   int _numero;
   String _agencia;
   double _saldo;
-  String _dataDeAbertura;
+  Data _dataDeAbertura = Data();
 
   Conta(this._titular, this._numero, this._agencia, this._saldo,
       this._dataDeAbertura);
@@ -39,18 +42,12 @@ class Conta {
     String dados = "Titular: " + _titular.nome;
     dados += "\nNúmero: $_numero";
     dados += "\nAgência: $_agencia";
-    dados += "\nData de Abertura: $_dataDeAbertura";
+    dados += "\nData de Abertura: ${_dataDeAbertura.dia}";
+    dados += "/${_dataDeAbertura.mes}";
+    dados += "/${_dataDeAbertura.ano}";
     dados += "\nSaldo atual: $_saldo";
     dados += "\nRendimento Mensal: ${calculaRendimento()}";
 
     return dados;
   }
-}
-
-class Cliente {
-  Cliente({this.nome = '', this.sobrenome = '', this.cpf = ''});
-
-  String nome;
-  String sobrenome;
-  String cpf;
 }
