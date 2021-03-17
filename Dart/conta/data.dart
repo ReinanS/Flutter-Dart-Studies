@@ -4,4 +4,12 @@ class Data {
   int dia;
   int mes;
   int ano;
+
+  String formatada() {
+    String dados = "$dia";
+    dados += "/$mes";
+    dados += "/$ano";
+
+    return dados;
+  }
 }

@@ -42,9 +42,7 @@ class Conta {
     String dados = "Titular: " + _titular.nome;
     dados += "\nNúmero: $_numero";
     dados += "\nAgência: $_agencia";
-    dados += "\nData de Abertura: ${_dataDeAbertura.dia}";
-    dados += "/${_dataDeAbertura.mes}";
-    dados += "/${_dataDeAbertura.ano}";
+    dados += "\nData de Abertura: ${_dataDeAbertura.formatada()}";
     dados += "\nSaldo atual: $_saldo";
     dados += "\nRendimento Mensal: ${calculaRendimento()}";
 
