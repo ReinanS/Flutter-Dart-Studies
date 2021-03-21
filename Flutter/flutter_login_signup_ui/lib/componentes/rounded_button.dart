@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_signup_ui/constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
@@ -8,8 +9,8 @@ class RoundedButton extends StatelessWidget {
   RoundedButton({
     this.text,
     this.press,
-    this.color,
-    this.textColor,
+    this.color = kPrimaryColor,
+    this.textColor = Colors.white,
   });
 
   @override
@@ -19,19 +20,19 @@ class RoundedButton extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       width: size.width * 0.8,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(29),
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-          child: TextButton(
-            style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(color)),
-            onPressed: press,
-            child: Text(
-              text,
-              style: TextStyle(color: textColor),
-            ),
-          ),
+      child: TextButton(
+        style: ButtonStyle(
+            padding: MaterialStateProperty.all<EdgeInsets>(
+                EdgeInsets.symmetric(vertical: 19, horizontal: 40)),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(29.0),
+            )),
+            backgroundColor: MaterialStateProperty.all<Color>(color)),
+        onPressed: press,
+        child: Text(
+          text,
+          style: TextStyle(color: textColor),
         ),
       ),
     );
