@@ -9,7 +9,7 @@ class RoundedInputField extends StatelessWidget {
 
   RoundedInputField({
     this.hintText,
-    this.icon,
+    this.icon = Icons.person,
     this.onChanged,
   });
 
@@ -20,9 +20,10 @@ class RoundedInputField extends StatelessWidget {
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
-            icon: Icon(icon, color: kPrimaryColor),
-            hintText: hintText,
-            border: InputBorder.none),
+          icon: Icon(icon, color: kPrimaryColor),
+          hintText: hintText,
+          border: InputBorder.none,
+        ),
       ),
     );
   }

@@ -18,6 +18,7 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(height: size.height * 0.05),
             Text(
               "SIGNUP",
               style: TextStyle(fontWeight: FontWeight.bold),
