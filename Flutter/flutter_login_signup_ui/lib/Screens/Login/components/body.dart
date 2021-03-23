@@ -8,6 +8,21 @@ import 'package:flutter_login_signup_ui/componentes/rounded_password_field.dart'
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatelessWidget {
+  final _crtlLogin = TextEditingController();
+  final _crtlPassword = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
+  _clickButton(BuildContext context) {
+    bool formOk = _formKey.currentState.validate();
+
+    if (!formOk) return;
+
+    String login = _crtlLogin.text;
+    String password = _crtlPassword.text;
+
+    print("login: $login senha: $password");
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -26,16 +41,27 @@ class Body extends StatelessWidget {
               height: size.height * 0.35,
             ),
             SizedBox(height: size.height * 0.03),
-            RoundedInputField(
-              hintText: "Your Email",
-              onChanged: (value) {},
-            ),
-            RoundedPassWordField(
-              onChanged: (value) {},
-            ),
-            RoundedButton(
-              text: "LOGIN",
-              press: () {},
+            Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  RoundedInputField(
+                    hintText: "Your Email",
+                    onChanged: (value) {},
+                    controller: _crtlLogin,
+                  ),
+                  RoundedPassWordField(
+                    onChanged: (value) {},
+                    controller: _crtlPassword,
+                  ),
+                  RoundedButton(
+                    text: "LOGIN",
+                    press: () {
+                      _clickButton(context);
+                    },
+                  ),
+                ],
+              ),
             ),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(

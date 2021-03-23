@@ -4,17 +4,21 @@ import 'package:flutter_login_signup_ui/constants.dart';
 
 class RoundedPassWordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
+  final TextEditingController controller;
 
   RoundedPassWordField({
     this.onChanged,
+    this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      child: TextFormField(
         obscureText: true,
         onChanged: onChanged,
+        controller: controller,
+        validator: _validaPassword,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
           hintText: "Password",
@@ -30,5 +34,11 @@ class RoundedPassWordField extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _validaPassword(String texto) {
+    if (texto.isEmpty) return "Digite sua Senha";
+
+    return null;
   }
 }

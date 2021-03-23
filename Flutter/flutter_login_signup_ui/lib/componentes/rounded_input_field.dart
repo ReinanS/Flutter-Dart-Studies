@@ -6,18 +6,22 @@ class RoundedInputField extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final ValueChanged<String> onChanged;
+  final TextEditingController controller;
 
   RoundedInputField({
     this.hintText,
     this.icon = Icons.person,
     this.onChanged,
+    this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      child: TextFormField(
         onChanged: onChanged,
+        controller: controller,
+        validator: _validaLogin,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
           icon: Icon(icon, color: kPrimaryColor),
@@ -26,5 +30,11 @@ class RoundedInputField extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _validaLogin(String texto) {
+    if (texto.isEmpty) return "Digite o seu Email";
+
+    return null;
   }
 }
