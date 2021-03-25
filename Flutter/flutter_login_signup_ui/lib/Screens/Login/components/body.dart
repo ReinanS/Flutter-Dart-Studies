@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_signup_ui/Screens/Home/home_screen.dart';
+import 'package:flutter_login_signup_ui/Screens/Login/components/alert.dart';
 import 'package:flutter_login_signup_ui/Screens/Login/components/background.dart';
 import 'package:flutter_login_signup_ui/Screens/Signup/signup_screen.dart';
 import 'package:flutter_login_signup_ui/componentes/already_have_an_account_acheck.dart';
 import 'package:flutter_login_signup_ui/componentes/rounded_button.dart';
 import 'package:flutter_login_signup_ui/componentes/rounded_input_field.dart';
 import 'package:flutter_login_signup_ui/componentes/rounded_password_field.dart';
+import 'package:flutter_login_signup_ui/models/usuario.dart';
 import 'package:flutter_login_signup_ui/services/login_api.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -83,9 +85,13 @@ class Body extends StatelessWidget {
 
     print("login: $login senha: $password");
 
-    var response = await LoginApi.login(login, password);
+    Usuario usuario = await LoginApi.login(login, password);
 
-    if (response) _navegaHomePage(context);
+    if (usuario != null)
+      _navegaHomePage(context);
+    else {
+      alert(context, "Login Invalido");
+    }
   }
 
   _navegaHomePage(BuildContext context) {
