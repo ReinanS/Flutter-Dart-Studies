@@ -14,23 +14,23 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: FutureBuilder(
-          future: produtos,
-          builder: (context, snapshot) {
-            if (snapshot.hasError) {
-              return Center(
-                child: Text("Erro ao Acessar os dados"),
-              );
-            }
+        future: produtos,
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return Center(child: Text("Erro ao acessar os dados"));
+          }
 
-            if (!snapshot.hasData) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
+          if (!snapshot.hasData) {
+            return Center(child: CircularProgressIndicator());
+          }
 
-            List<Produto> produtos = snapshot.data;
-            return _listView(produtos);
-          }),
+          List<Produto> produtos = snapshot.data;
+
+          print(produtos[0].nome);
+
+          return _listView(produtos);
+        },
+      ),
     );
   }
 
