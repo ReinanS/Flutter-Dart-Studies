@@ -32,4 +32,10 @@ class RGB {
 
     return color;
   }
+
+  bool isEqual(RGB rgb) {
+    return (this._red == rgb.red) &&
+        (this._green == rgb.green) &&
+        (this._blue == rgb.blue);
+  }
 }
