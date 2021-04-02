@@ -37,7 +37,6 @@ class Body extends StatelessWidget {
                     controller: _crtlLogin,
                   ),
                   RoundedPassWordField(
-                    onChanged: (value) {},
                     controller: _crtlPassword,
                   ),
                   RoundedButton(

@@ -34,15 +34,12 @@ class Body extends StatelessWidget {
               key: _formKey,
               child: Column(
                 children: [
-                  title("Email"),
                   RoundedInputField(
                     hintText: "Your Email",
                     onChanged: (value) {},
                     controller: _crtlLogin,
                   ),
-                  title("Senha"),
                   RoundedPassWordField(
-                    onChanged: (value) {},
                     controller: _crtlPassword,
                   ),
                   RoundedButton(
