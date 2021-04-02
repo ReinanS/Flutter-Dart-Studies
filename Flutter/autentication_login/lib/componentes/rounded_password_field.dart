@@ -2,12 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:autentication_login/componentes/text_field_container.dart';
 import 'package:autentication_login/constants.dart';
 
-class RoundedPassWordField extends StatelessWidget {
-  final ValueChanged<String> onChanged;
+class RoundedPassWordField extends StatefulWidget {
   final TextEditingController controller;
 
   RoundedPassWordField({
-    this.onChanged,
+    this.controller,
+  });
+
+  @override
+  _RoundedPassWordFieldState createState() =>
+      _RoundedPassWordFieldState(controller: controller);
+}
+
+class _RoundedPassWordFieldState extends State<RoundedPassWordField> {
+  final TextEditingController controller;
+  IconData passwordIcon = Icons.visibility_off;
+  bool obscureText = true;
+
+  _RoundedPassWordFieldState({
     this.controller,
   });
 
@@ -15,8 +27,7 @@ class RoundedPassWordField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextFormField(
-        obscureText: true,
-        onChanged: onChanged,
+        obscureText: obscureText,
         controller: controller,
         validator: _validaPassword,
         cursorColor: kPrimaryColor,
@@ -26,9 +37,23 @@ class RoundedPassWordField extends StatelessWidget {
             Icons.lock,
             color: kPrimaryColor,
           ),
-          suffixIcon: Icon(
-            Icons.visibility,
-            color: kPrimaryColor,
+          suffixIcon: IconButton(
+            icon: Icon(
+              passwordIcon,
+              size: 25,
+              color: kPrimaryColor,
+            ),
+            onPressed: () {
+              setState(() {
+                obscureText = !obscureText;
+
+                if (obscureText) {
+                  passwordIcon = Icons.visibility_off;
+                } else {
+                  passwordIcon = Icons.visibility;
+                }
+              });
+            },
           ),
           border: InputBorder.none,
         ),
