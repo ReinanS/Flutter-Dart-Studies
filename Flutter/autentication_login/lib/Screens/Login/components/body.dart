@@ -9,6 +9,7 @@ import 'package:autentication_login/componentes/rounded_input_field.dart';
 import 'package:autentication_login/componentes/rounded_password_field.dart';
 import 'package:autentication_login/models/usuario.dart';
 import 'package:autentication_login/services/login_api.dart';
+import 'package:autentication_login/componentes/title.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatelessWidget {
@@ -33,11 +34,13 @@ class Body extends StatelessWidget {
               key: _formKey,
               child: Column(
                 children: [
+                  title("Email"),
                   RoundedInputField(
                     hintText: "Your Email",
                     onChanged: (value) {},
                     controller: _crtlLogin,
                   ),
+                  title("Senha"),
                   RoundedPassWordField(
                     onChanged: (value) {},
                     controller: _crtlPassword,
