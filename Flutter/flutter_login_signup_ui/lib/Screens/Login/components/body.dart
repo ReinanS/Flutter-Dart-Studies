@@ -24,16 +24,11 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "LOGIN",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: size.height * 0.03),
             SvgPicture.asset(
               "assets/icons/login.svg",
-              height: size.height * 0.35,
+              height: size.height * 0.3,
             ),
-            SizedBox(height: size.height * 0.03),
+            SizedBox(height: size.height * 0.04),
             Form(
               key: _formKey,
               child: Column(

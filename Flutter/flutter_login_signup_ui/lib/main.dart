@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_login_signup_ui/Screens/Home/home_screen.dart';
 import 'package:flutter_login_signup_ui/Screens/Login/login_screen.dart';
+import 'package:flutter_login_signup_ui/Screens/Signup/signup_screen.dart';
 import 'package:flutter_login_signup_ui/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_login_signup_ui/constants.dart';
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: LoginScreen(),
+      home: WelcomeScreen(),
     );
   }
 }

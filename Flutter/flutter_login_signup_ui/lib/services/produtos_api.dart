@@ -22,6 +22,8 @@ class ProdutosAPI {
     var response = await http.get(url, headers: header);
 
     if (response.statusCode == 200) {
+      print(response.statusCode);
+
       List listResponse = json.decode(response.body);
       final produtos = <Produto>[];
 
