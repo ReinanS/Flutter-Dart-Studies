@@ -1,3 +1,4 @@
+import 'package:autentication_login/componentes/on_tap_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:autentication_login/componentes/text_field_container.dart';
 import 'package:autentication_login/constants.dart';
@@ -37,13 +38,13 @@ class _RoundedPassWordFieldState extends State<RoundedPassWordField> {
             Icons.lock,
             color: kPrimaryColor,
           ),
-          suffixIcon: IconButton(
+          suffixIcon: OnTapIcon(
             icon: Icon(
               passwordIcon,
-              size: 25,
+              size: 30,
               color: kPrimaryColor,
             ),
-            onPressed: () {
+            onTap: () {
               setState(() {
                 obscureText = !obscureText;
 
