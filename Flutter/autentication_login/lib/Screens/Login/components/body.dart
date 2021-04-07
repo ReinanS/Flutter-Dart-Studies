@@ -1,3 +1,4 @@
+import 'package:autentication_login/Screens/product/products_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:autentication_login/Screens/Home/home_screen.dart';
 import 'package:autentication_login/Screens/Login/components/alert.dart';
@@ -92,7 +93,7 @@ class Body extends StatelessWidget {
   _navegaHomePage(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => HomeScreen()),
+      MaterialPageRoute(builder: (context) => ProductsScreen()),
     );
   }
 }

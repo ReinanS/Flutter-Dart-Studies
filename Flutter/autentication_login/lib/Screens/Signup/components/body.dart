@@ -79,7 +79,8 @@ class Body extends StatelessWidget {
                   press: () {},
                 ),
               ],
-            )
+            ),
+            SizedBox(height: size.height * 0.05),
           ],
         ),
       ),
