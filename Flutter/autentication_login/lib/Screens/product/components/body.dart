@@ -1,3 +1,4 @@
+import 'package:autentication_login/Screens/details/details_screen.dart';
 import 'package:autentication_login/Screens/product/components/category_list.dart';
 import 'package:autentication_login/Screens/product/components/product_card.dart';
 import 'package:autentication_login/componentes/search_box.dart';
@@ -61,7 +62,16 @@ class _BodyState extends State<Body> {
                     itemBuilder: (context, index) => ProductCard(
                           itemIndex: index,
                           product: produtos[index],
-                          press: () {},
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DetailScreen(
+                                  produto: produtos[index],
+                                ),
+                              ),
+                            );
+                          },
                         )),
               ],
             ),
