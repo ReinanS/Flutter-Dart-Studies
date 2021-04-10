@@ -51,7 +51,7 @@ class _BodyState extends State<Body> {
                     child: Hero(
                       tag: '${produto.produtoId}',
                       child: ProductPoster(
-                        size: size,
+                        size: size * 0.7,
                         image: produto.imagemUrl,
                       ),
                     ),

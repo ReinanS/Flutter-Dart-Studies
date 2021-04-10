@@ -19,7 +19,7 @@ class ChatAndAddToCart extends StatelessWidget {
         children: <Widget>[
           FaIcon(
             FontAwesomeIcons.comment,
-            size: 12,
+            size: 18,
           ),
           SizedBox(
             width: kDefaultPadding / 2,
@@ -33,7 +33,8 @@ class ChatAndAddToCart extends StatelessWidget {
             onPressed: () {},
             icon: FaIcon(
               FontAwesomeIcons.shoppingCart,
-              size: 12,
+              color: Colors.black,
+              size: 18,
             ),
             label: Text(
               "Add to Cart",

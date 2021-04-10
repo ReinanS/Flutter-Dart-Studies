@@ -8,6 +8,7 @@ class ListOfColors extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: kDefaultPadding),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           ColorDot(
             fillColor: Color(0xFF80989A),
