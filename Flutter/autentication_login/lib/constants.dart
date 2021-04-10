@@ -6,7 +6,9 @@ const kPrimaryLightColor = Color(0xFFF1E6FF);
 const kSecondColor = Color(0xFF361a50);
 const kTextColor = Color(0xFF000839);
 const kTextLightColor = Color(0xFF747474);
-const kBlueColor = Color(0xFFa850fa);
+const kBlueColor = Color(0xFF0D47A1);
+
+const kInputField = Color(0xFFF5F5F5);
 
 const kDefaultPadding = 20.0;
 
