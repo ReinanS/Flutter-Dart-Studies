@@ -3,6 +3,12 @@ class RGB {
   int _blue = 0;
   int _green = 0;
 
+  RGB(int red, int green, int blue) {
+    this._red = red;
+    this._green = green;
+    this._blue = blue;
+  }
+
   int get red {
     return _red;
   }
