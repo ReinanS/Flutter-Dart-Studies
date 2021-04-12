@@ -13,23 +13,17 @@ class RGB {
     return _red;
   }
 
-  set red(int red) {
-    this._red = red;
-  }
-
   int get blue {
     return _blue;
-  }
-
-  set blue(int blue) {
-    this._blue = blue;
   }
 
   int get green {
     return _green;
   }
 
-  set green(int green) {
-    this._green = green;
+  int getLuminosidade() {
+    double luminosidade = (red * 0.3) + (green * 0.59) + (blue * 0.11) / 255;
+
+    return luminosidade.toInt();
   }
 }
