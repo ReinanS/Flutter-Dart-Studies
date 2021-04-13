@@ -28,16 +28,16 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 1. Escreva
-    - I. Uma classe que represente uma cor RGB. 🔴
-    - II. A representação estática da classe criada. 🔴
-    - III. Os métodos que lêem e alteram os valores das componentes RGB da cor.
-    - IV. Um método que leia a luminosidade da cor. 🔴
-    - V. Construtores sobrecarregados que permitam a criação de uma cor. 🔴
-    - VI. Um construtor de cópia, que crie uma cor idêntica (mesmo valor de R, G e B). 🔴
-    - VII. Um construtor sem parâmetros, que crie a cor preta (<R=0, G=0, B=0>). 🔴
-    - VIII. Um construtor que receba três valores como parâmetros e crie uma considerando estes valores como os valores de R, G e B, respectivamente. 🔴
-    - IX. Um método que verifique se duas cores são iguais. As cores são consideradas iguais se seus valores de R, G e B são idênticos entre si (o R de uma cor igual o R da outra e assim por diante). 🔴
-    - X. Altere as propriedades Red, Green e Blue e Luminosidade para serem exclusivamente leitura. 🔴
+    - I. Uma classe que represente uma cor RGB. 🟢
+    - II. A representação estática da classe criada. 🟢
+    - III. Os métodos que lêem e alteram os valores das componentes RGB da cor. 🟢
+    - IV. Um método que leia a luminosidade da cor. 🟢
+    - V. Construtores sobrecarregados que permitam a criação de uma cor. 🟢
+    - VI. Um construtor de cópia, que crie uma cor idêntica (mesmo valor de R, G e B). 🟢
+    - VII. Um construtor sem parâmetros, que crie a cor preta (<R=0, G=0, B=0>). 🟢
+    - VIII. Um construtor que receba três valores como parâmetros e crie uma considerando estes valores como os valores de R, G e B, respectivamente. 🟢
+    - IX. Um método que verifique se duas cores são iguais. As cores são consideradas iguais se seus valores de R, G e B são idênticos entre si (o R de uma cor igual o R da outra e assim por diante). 🟢
+    - X. Altere as propriedades Red, Green e Blue e Luminosidade para serem exclusivamente leitura. 🟢
     - XI. Um método que gere e retorne uma nova cor RGB equivalente ao cinza da cor RGB em questão. Essa cor possui os valores de R, G e B iguais entre si e iguais ao valor da luminosidade da cor original. Por exemplo, para a cor #2596BE, a cor gerada deverá ser #797979. 🔴
     - XII. Um método que gere uma representação String da cor como hexadecimal. A representação é composta pelo caracter # seguida de dois dígitos representando o valor de R, G e B em hexadecimal. Por exemplo, para a cor RGB, onde R=37, G=150, B=190, o método deve retornar: #2596BE. 🔴
     - XIII. Um método clarear que receba um valor e modifique a tonalidade da cor em questão a tornando mais clara. Para isso, o método deve modificar os valores RGB, para um novo valor p percentual maior, onde p deve ser indicado como parâmetro. Por exemplo, para a cor  #2596BE, se o parâmetro de clarear for 0.1 (10%), a cor deve se tornar #3BA1C5. 🔴
