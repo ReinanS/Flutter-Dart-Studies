@@ -9,17 +9,11 @@ class RGB {
     this._blue = 0,
   ]);
 
-  int get red {
-    return _red;
-  }
+  int get red => _red;
 
-  int get blue {
-    return _blue;
-  }
+  int get blue => _blue;
 
-  int get green {
-    return _green;
-  }
+  int get green => _green;
 
   int getLuminosidade() {
     double luminosidade = (red * 0.3) + (green * 0.59) + (blue * 0.11) / 255;
