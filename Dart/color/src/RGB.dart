@@ -1,9 +1,13 @@
 class RGB {
-  int _red = 0;
-  int _blue = 0;
-  int _green = 0;
+  int _red;
+  int _green;
+  int _blue;
 
-  RGB(this._red, this._green, this._blue);
+  RGB([
+    this._red = 0,
+    this._green = 0,
+    this._blue = 0,
+  ]);
 
   int get red {
     return _red;
