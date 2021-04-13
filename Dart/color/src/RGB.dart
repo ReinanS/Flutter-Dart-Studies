@@ -26,4 +26,10 @@ class RGB {
 
     return luminosidade.toInt();
   }
+
+  bool isEqual(RGB color) {
+    return (red == color.red) &&
+        (green == color.green) &&
+        (blue == color._blue);
+  }
 }
