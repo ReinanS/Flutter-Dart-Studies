@@ -18,12 +18,18 @@ class RGB {
   int getLuminosidade() {
     double luminosidade = (red * 0.3) + (green * 0.59) + (blue * 0.11) / 255;
 
-    return luminosidade.toInt();
+    return luminosidade as int;
   }
 
   bool isEqual(RGB color) {
     return (red == color.red) &&
         (green == color.green) &&
         (blue == color._blue);
+  }
+
+  void lighten(double percent) {
+    this._red -= (red * percent) as int;
+    this._green -= (green * percent) as int;
+    this._blue -= (blue * percent) as int;
   }
 }
