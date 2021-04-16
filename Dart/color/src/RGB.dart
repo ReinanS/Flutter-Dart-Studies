@@ -15,10 +15,10 @@ class RGB {
 
   int get green => _green;
 
-  int getLuminosidade() {
-    double luminosidade = (red * 0.3) + (green * 0.59) + (blue * 0.11) / 255;
+  int getLuminosity() {
+    double luminosity = (red * 0.3) + (green * 0.59) + (blue * 0.11) / 255;
 
-    return luminosidade.toInt();
+    return luminosity.toInt();
   }
 
   bool isEqual(RGB color) {
@@ -37,5 +37,21 @@ class RGB {
     this._red -= (red * percent).toInt();
     this._green -= (green * percent).toInt();
     this._blue -= (blue * percent).toInt();
+  }
+
+  RGB gray() {
+    int lum = this._lum();
+
+    this._red = lum;
+    this._blue = lum;
+    this._green = lum;
+
+    return this;
+  }
+
+  int _lum() {
+    double result = (red * 0.3) + (green * 0.59) + (blue * 0.11);
+
+    return result.toInt();
   }
 }
