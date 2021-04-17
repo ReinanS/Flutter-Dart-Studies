@@ -40,18 +40,13 @@ class RGB {
   }
 
   RGB gray() {
-    int lum = this._lum();
+    double lumDouble = (red * 0.3) + (green * 0.59) + (blue * 0.11);
+    int lum = lumDouble.toInt();
 
     this._red = lum;
     this._blue = lum;
     this._green = lum;
 
     return this;
-  }
-
-  int _lum() {
-    double result = (red * 0.3) + (green * 0.59) + (blue * 0.11);
-
-    return result.toInt();
   }
 }
