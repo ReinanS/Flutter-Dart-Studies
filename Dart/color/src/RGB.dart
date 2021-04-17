@@ -71,4 +71,30 @@ class RGB {
 
     return ("#" + sRed + sGreen + sBlue);
   }
+
+  // TESTES UNITARIOS
+  void printRGB() {
+    print(red);
+    print(green);
+    print(blue);
+  }
+
+  void testDecimalToHex(String goal) {
+    print("*** TEST DECIMAL TO HEX ***");
+    print("Color HEX: " + getColorHex());
+    print("Goal: " + goal);
+
+    print(getColorHex() == goal);
+  }
+
+  void testGray(String goal) {
+    RGB _gray = gray();
+    String _grayHEX = _gray.getColorHex();
+
+    print("*** TEST GRAY ***");
+    print("GRAY COLOR: " + _grayHEX);
+    print("Goal: " + goal);
+
+    print(_grayHEX == goal);
+  }
 }
