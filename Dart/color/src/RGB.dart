@@ -49,4 +49,26 @@ class RGB {
 
     return this;
   }
+
+  String decimalToHex(int decimal) {
+    int rem;
+    String hex = "";
+    String hexChar = "0123456789ABCDEF";
+
+    while (decimal > 0) {
+      rem = decimal % 16;
+      hex = hexChar[rem] + hex;
+      decimal = decimal ~/ 16;
+    }
+
+    return hex;
+  }
+
+  String getColorHex() {
+    String sRed = decimalToHex(red);
+    String sGreen = decimalToHex(green);
+    String sBlue = decimalToHex(blue);
+
+    return ("#" + sRed + sGreen + sBlue);
+  }
 }
