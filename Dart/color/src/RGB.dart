@@ -41,7 +41,7 @@ class RGB {
 
   RGB gray() {
     double lumDouble = (red * 0.3) + (green * 0.59) + (blue * 0.11);
-    int lum = lumDouble.toInt();
+    int lum = lumDouble.round();
 
     this._red = lum;
     this._blue = lum;
@@ -92,7 +92,7 @@ class RGB {
     String _grayHEX = _gray.getColorHex();
 
     print("*** TEST GRAY ***");
-    print("GRAY COLOR: " + _grayHEX);
+    print("GRAY COLOR HEX: " + _grayHEX);
     print("Goal: " + goal);
 
     print(_grayHEX == goal);
