@@ -16,9 +16,9 @@ class RGB {
   int get green => _green;
 
   int getLuminosity() {
-    double luminosity = (red * 0.3) + (green * 0.59) + (blue * 0.11) / 255;
+    double luminosity = (red * 0.3) + (green * 0.59) + (blue * 0.11);
 
-    return luminosity.toInt();
+    return luminosity.round();
   }
 
   bool isEqual(RGB color) {
@@ -28,20 +28,19 @@ class RGB {
   }
 
   void lighten(double percent) {
-    this._red += (red * percent).toInt();
-    this._green += (green * percent).toInt();
-    this._blue += (blue * percent).toInt();
+    this._red += (red * percent).round();
+    this._green += (green * percent).round();
+    this._blue += (blue * percent).round();
   }
 
   void darken(double percent) {
-    this._red -= (red * percent).toInt();
-    this._green -= (green * percent).toInt();
-    this._blue -= (blue * percent).toInt();
+    this._red -= (red * percent).round();
+    this._green -= (green * percent).round();
+    this._blue -= (blue * percent).round();
   }
 
-  RGB gray() {
-    double lumDouble = (red * 0.3) + (green * 0.59) + (blue * 0.11);
-    int lum = lumDouble.round();
+  RGB toGray() {
+    int lum = getLuminosity();
 
     this._red = lum;
     this._blue = lum;
@@ -73,10 +72,8 @@ class RGB {
   }
 
   // TESTES UNITARIOS
-  void printRGB() {
-    print(red);
-    print(green);
-    print(blue);
+  String printRGB() {
+    return "$red, $green, $blue";
   }
 
   void testDecimalToHex(String goal) {
@@ -88,7 +85,7 @@ class RGB {
   }
 
   void testGray(String goal) {
-    RGB _gray = gray();
+    RGB _gray = toGray();
     String _grayHEX = _gray.getColorHex();
 
     print("*** TEST GRAY ***");
