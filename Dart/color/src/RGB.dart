@@ -94,4 +94,22 @@ class RGB {
 
     print(_grayHEX == goal);
   }
+
+  void testLighten(String goal, double percent) {
+    print("*** TEST LIGHTEN");
+
+    this.lighten(percent);
+    String hex = getColorHex();
+
+    print(hex == goal);
+  }
+
+  bool testDarken(String goal, double percent) {
+    print("*** TEST DARKEN");
+
+    this.darken(percent);
+    String hex = getColorHex();
+
+    return hex == goal;
+  }
 }
