@@ -1,4 +1,10 @@
 class RGB {
+  static final RGB kBlack = RGB(0, 0, 0);
+  static final RGB kWhite = RGB(255, 255, 255);
+  static final RGB kRed = RGB(255, 0, 0);
+  static final RGB kGreen = RGB(0, 255, 0);
+  static final RGB kBlue = RGB(0, 0, 255);
+
   int _red;
   int _green;
   int _blue;
@@ -71,6 +77,11 @@ class RGB {
     return ("#" + sRed + sGreen + sBlue);
   }
 
+  RGB currentColor() {
+    RGB rgb = new RGB(red, green, blue);
+    return rgb;
+  }
+
   // TESTES UNITARIOS
   String printRGB() {
     return "$red, $green, $blue";
@@ -95,18 +106,14 @@ class RGB {
     print(_grayHEX == goal);
   }
 
-  void testLighten(String goal, double percent) {
-    print("*** TEST LIGHTEN");
-
+  bool unitLighten(String goal, double percent) {
     this.lighten(percent);
     String hex = getColorHex();
 
-    print(hex == goal);
+    return hex == goal;
   }
 
-  bool testDarken(String goal, double percent) {
-    print("*** TEST DARKEN");
-
+  bool unitDarken(String goal, double percent) {
     this.darken(percent);
     String hex = getColorHex();
 
