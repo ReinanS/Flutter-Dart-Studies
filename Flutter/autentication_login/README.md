@@ -1,16 +1,10 @@
 # autentication_login
 
-A new Flutter project.
+## Sobre
+Aplicação mobile, que utiliza autenticação com API Rest, e exibe uma tela de produtos por meio de outra solicitação.
 
-## Getting Started
+### Material utilizado
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[Exibição da Tela de Produtos](https://www.youtube.com/watch?v=bkR7naR1efA).
+[UI Login](https://www.youtube.com/watch?v=ExKYjqgswJg&list=PLxUBb2A_UUy_bpiNq33_V-KnqN6g4UPVa).
+[Autenticação API Rest](https://www.youtube.com/watch?v=kQ_hShOrzHM&list=PLJ4k1IC8GhW1rT4nzRCqB1ACzD7nw631V).
