@@ -3,6 +3,12 @@
 ## Sobre
 Aplicação mobile, que utiliza autenticação com API Rest, e exibe uma tela de produtos por meio de outra solicitação.
 
+![Welcome Screen](/assets/screens/Welcome_Screen.jpeg)
+![Login Screen](/assets/screens/Login_Screen.jpeg)
+![Sign UP Screen](/assets/screens/Sign_Up_Screen.jpeg)
+![Products Screen](/assets/screens/Products_Screen.jpeg)
+![Details Screen](/assets/screens/Details_Screen.jpeg)
+
 ### Material utilizado
 
 - [Exibição da Tela de Produtos](https://www.youtube.com/watch?v=bkR7naR1efA).
