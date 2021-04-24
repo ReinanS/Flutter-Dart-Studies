@@ -5,13 +5,16 @@ Aplicação mobile que lista produtos, para a aprendizagem de autenticação Flu
 - Flutter
 - Dart
 - API Rest
+- Flutter SVG
+- Shared Preferences
+- Font Awesome Flutter
 
 ## Como utilizar?
 Você pode seguir estas instruções para construir sua autentication login e instalá-lo em seu dispositivo.
 
 ### Pré-requisitos
 Se você é novo no Flutter, siga primeiro
-O [Flutter Setup](https://flutter.dev/setup/) guia.
+o [Flutter Setup](https://flutter.dev/setup/) guia.
 
 ### Construir e instalar o aplicativo autentication login
 * `git clone https://github.com/ReinanS/Flutter-Dart-Studies/`
@@ -29,7 +32,7 @@ Eu tentei, mas ainda tenho muito a melhorar em questão de UI e UX.
 |![Welcome_Screen](https://user-images.githubusercontent.com/51024246/115941432-b2a4a780-a47b-11eb-83cc-5d723e10f91f.jpeg) | ![Login_Screen](https://user-images.githubusercontent.com/51024246/115941455-ccde8580-a47b-11eb-9cf0-aab750799280.jpeg)
 
 
-| Sign_Up_Screen        | Products_Screen           | Details_Screen  |
+| Sign_Up_Screen        | Products_Screen        | Details_Screen  |
 | ------------- |:-------------:| -----:|
 | ![Sign_Up_Screen](https://user-images.githubusercontent.com/51024246/115941458-d0720c80-a47b-11eb-9c82-380fa5455a7d.jpeg)      | ![Products_Screen](https://user-images.githubusercontent.com/51024246/115941454-c8b26800-a47b-11eb-955b-0144b2f1d15e.jpeg) | ![Details_Screen](https://user-images.githubusercontent.com/51024246/115941475-db2ca180-a47b-11eb-89cb-ce58fdd35688.jpeg) |
 
