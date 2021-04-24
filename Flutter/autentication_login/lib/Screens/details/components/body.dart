@@ -7,7 +7,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
-  Produto produto;
+  final Produto produto;
 
   Body({
     this.produto,

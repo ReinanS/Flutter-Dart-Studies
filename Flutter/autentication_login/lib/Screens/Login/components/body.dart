@@ -1,6 +1,5 @@
 import 'package:autentication_login/Screens/product/products_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:autentication_login/Screens/Home/home_screen.dart';
 import 'package:autentication_login/Screens/Login/components/alert.dart';
 import 'package:autentication_login/Screens/Login/components/background.dart';
 import 'package:autentication_login/Screens/Signup/signup_screen.dart';
@@ -10,7 +9,6 @@ import 'package:autentication_login/componentes/rounded_input_field.dart';
 import 'package:autentication_login/componentes/rounded_password_field.dart';
 import 'package:autentication_login/models/usuario.dart';
 import 'package:autentication_login/services/login_api.dart';
-import 'package:autentication_login/componentes/title.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatelessWidget {
