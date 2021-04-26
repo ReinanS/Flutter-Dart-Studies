@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class OnTapIcon extends StatelessWidget {
-  Icon icon;
-  Function onTap;
+  final Icon icon;
+  final Function onTap;
 
   OnTapIcon({
     this.icon,

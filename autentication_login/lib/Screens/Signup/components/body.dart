@@ -12,7 +12,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 class Body extends StatelessWidget {
   final _crtlLogin = TextEditingController();
   final _crtlPassword = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {

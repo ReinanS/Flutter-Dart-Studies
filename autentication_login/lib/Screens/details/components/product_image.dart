@@ -7,8 +7,8 @@ class ProductPoster extends StatelessWidget {
     this.image,
   });
 
-  Size size;
-  String image;
+  final Size size;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
