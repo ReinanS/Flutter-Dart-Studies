@@ -1,16 +1,37 @@
-# flutter_login_page_ui
+# Flutter Login Page UI
 
-A new Flutter project.
+Login UI Kit para o aprendizado de criação de Layout, utilizando Speed Code.
 
-## Getting Started
+## Material utilizado
 
-This project is a starting point for a Flutter application.
+- [Speed Code Afgprogrammer](https://www.youtube.com/watch?v=NHAIiAmxTAU).
 
-A few resources to get you started if this is your first Flutter project:
+## Tecnologias Utilizadas
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Flutter
+- Dart
+- Simple Animations
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Como utilizar?
+
+Você pode seguir estas instruções para construir sua Login Page UI e instalá-lo em seu dispositivo.
+
+### Pré-requisitos
+
+Se você é novo no Flutter, siga primeiro
+o [Flutter Setup](https://flutter.dev/setup/) guia.
+
+### Construir e instalar o aplicativo autentication login
+
+- `git clone https://github.com/ReinanS/Flutter-Dart-Studies/`
+- `cd Flutter-Dart-Studies/Flutter/flutter_login_page_ui/`
+- `flutter pub get`
+- `flutter run --release`
+
+O comando `flutter run --release` cria e instala o aplicativo Flutter.
+
+## Demonstração da interface do usuário
+
+|           UI  Login    |
+| ------------- |
+| ![WhatsApp Image 2021-04-29 at 9 30 58 PM (1)](https://user-images.githubusercontent.com/51024246/116635192-803ff200-a934-11eb-83ff-71da4772c536.jpeg) |
