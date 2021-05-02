@@ -34,5 +34,4 @@ O comando `flutter run --release` cria e instala o aplicativo Flutter.
 
 |           UI  Login    |
 | ------------- | 
-| <img src="https://user-images.githubusercontent.com/51024246/116635192-803ff200-a934-11eb-83ff-71da4772c536.jpeg" width="290px" height="500px">
-|
+| <img src="https://user-images.githubusercontent.com/51024246/116635192-803ff200-a934-11eb-83ff-71da4772c536.jpeg" width="290px" height="500px"> |
