@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:autentication_login/Screens/details/details_screen.dart';
 import 'package:autentication_login/Screens/product/components/category_list.dart';
 import 'package:autentication_login/Screens/product/components/product_card.dart';
@@ -13,12 +15,23 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  Future<List<Produto>> produtos = ProdutosAPI.fetchProdutos();
+  final _streamController = StreamController<List<Produto>>();
+
+  @override
+  void initState() {
+    super.initState();
+    _loadProdutos();
+  }
+
+  void _loadProdutos() async {
+    List<Produto> produtos = await ProdutosAPI.fetchProdutos();
+    _streamController.add(produtos);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: produtos,
+    return StreamBuilder(
+      stream: _streamController.stream,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Center(child: Text('Erro ao Acessar Dados'));
