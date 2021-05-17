@@ -1,10 +1,10 @@
 import 'dart:async';
 
 void main() {
-  exemplo1();
+  estreamTransformer();
 }
 
-void exemplo1() {
+void estream() {
   // cria o stream
   final ctrl = StreamController();
 
@@ -20,4 +20,14 @@ void exemplo1() {
   ctrl.close();
 }
 
-void exemplo2() {}
+void estreamTransformer() {
+  final ctrl = StreamController<int>.broadcast();
+
+  final sub = ctrl.stream
+      .where((valor) => (valor % 2 == 0))
+      .listen((valor) => print(valor));
+
+  for (int i = 1; i < 11; i++) ctrl.sink.add(i);
+
+  ctrl.close();
+}
