@@ -1,11 +1,10 @@
-import 'dart:async';
+import 'package:autentication_login/blocs/product_bloc.dart';
 import 'package:autentication_login/componentes/search_box.dart';
 import 'package:autentication_login/constants.dart';
 import 'package:autentication_login/models/produto.dart';
 import 'package:autentication_login/pages/details/details_screen.dart';
 import 'package:autentication_login/pages/product/components/category_list.dart';
 import 'package:autentication_login/pages/product/components/product_card.dart';
-import 'package:autentication_login/services/produtos_api.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -14,30 +13,25 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  final _streamController = StreamController<List<Produto>>();
+  final _productBloc = ProductBloc();
 
   @override
   void initState() {
     super.initState();
-    _loadProdutos();
+    _productBloc.loadProdutos();
   }
 
   // fecha o fluxo de estream para liberar memória
   @override
   void dispose() {
     super.dispose();
-    _streamController.close();
-  }
-
-  void _loadProdutos() async {
-    List<Produto> produtos = await ProdutosAPI.fetchProdutos();
-    _streamController.add(produtos);
+    _productBloc.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: _streamController.stream,
+      stream: _productBloc.productsStream,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Center(child: Text('Erro ao Acessar Dados'));

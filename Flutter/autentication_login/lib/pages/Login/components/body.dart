@@ -1,3 +1,4 @@
+import 'package:autentication_login/blocs/login_bloc.dart';
 import 'package:autentication_login/pages/Login/components/alert.dart';
 import 'package:autentication_login/pages/Login/components/background.dart';
 import 'package:autentication_login/pages/Signup/signup_screen.dart';
@@ -15,6 +16,7 @@ class Body extends StatelessWidget {
   final _crtlLogin = TextEditingController();
   final _crtlPassword = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  final _loginBloc = LoginBloc();
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +81,7 @@ class Body extends StatelessWidget {
 
     print("login: $login senha: $password");
 
-    Usuario usuario = await LoginApi.login(login, password);
+    Usuario usuario = await _loginBloc.login(login, password);
 
     if (usuario != null)
       _navegaHomePage(context);
