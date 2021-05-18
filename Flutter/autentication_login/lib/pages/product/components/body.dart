@@ -1,11 +1,10 @@
 import 'dart:async';
-
-import 'package:autentication_login/Screens/details/details_screen.dart';
-import 'package:autentication_login/Screens/product/components/category_list.dart';
-import 'package:autentication_login/Screens/product/components/product_card.dart';
 import 'package:autentication_login/componentes/search_box.dart';
 import 'package:autentication_login/constants.dart';
 import 'package:autentication_login/models/produto.dart';
+import 'package:autentication_login/pages/details/details_screen.dart';
+import 'package:autentication_login/pages/product/components/category_list.dart';
+import 'package:autentication_login/pages/product/components/product_card.dart';
 import 'package:autentication_login/services/produtos_api.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +20,13 @@ class _BodyState extends State<Body> {
   void initState() {
     super.initState();
     _loadProdutos();
+  }
+
+  // fecha o fluxo de estream para liberar memória
+  @override
+  void dispose() {
+    super.dispose();
+    _streamController.close();
   }
 
   void _loadProdutos() async {

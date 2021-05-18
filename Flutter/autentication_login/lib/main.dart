@@ -1,5 +1,5 @@
+import 'package:autentication_login/pages/Welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:autentication_login/Screens/Welcome/welcome_screen.dart';
 import 'package:autentication_login/constants.dart';
 
 void main() => runApp(MyApp());

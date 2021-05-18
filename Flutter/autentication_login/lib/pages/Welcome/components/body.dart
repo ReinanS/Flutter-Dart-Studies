@@ -1,8 +1,8 @@
+import 'package:autentication_login/pages/Login/login_screen.dart';
+import 'package:autentication_login/pages/Signup/signup_screen.dart';
+import 'package:autentication_login/pages/Welcome/components/background.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:autentication_login/Screens/Login/login_screen.dart';
-import 'package:autentication_login/Screens/Signup/signup_screen.dart';
-import 'package:autentication_login/Screens/Welcome/components/background.dart';
 import 'package:autentication_login/componentes/rounded_button.dart';
 import 'package:autentication_login/constants.dart';
 import 'package:flutter_svg/svg.dart';

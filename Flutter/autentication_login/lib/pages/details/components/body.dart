@@ -1,8 +1,8 @@
-import 'package:autentication_login/Screens/details/components/chat_and_add_to_cart.dart';
-import 'package:autentication_login/Screens/details/components/list_of_colors.dart';
-import 'package:autentication_login/Screens/details/components/product_image.dart';
 import 'package:autentication_login/constants.dart';
 import 'package:autentication_login/models/produto.dart';
+import 'package:autentication_login/pages/details/components/chat_and_add_to_cart.dart';
+import 'package:autentication_login/pages/details/components/list_of_colors.dart';
+import 'package:autentication_login/pages/details/components/product_image.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {

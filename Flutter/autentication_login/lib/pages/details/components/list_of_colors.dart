@@ -1,5 +1,5 @@
-import 'package:autentication_login/Screens/details/components/color_dots.dart';
 import 'package:autentication_login/constants.dart';
+import 'package:autentication_login/pages/details/components/color_dots.dart';
 import 'package:flutter/material.dart';
 
 class ListOfColors extends StatelessWidget {

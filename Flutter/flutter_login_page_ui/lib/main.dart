@@ -170,7 +170,7 @@ class HomePage extends StatelessWidget {
                     FadeAnimation(
                         1.5,
                         Text(
-                          "Esqueceu a Senha?",
+                          "Esqueceu sua Senha?",
                           style: TextStyle(
                               color: Color.fromRGBO(143, 148, 251, 1)),
                         ))

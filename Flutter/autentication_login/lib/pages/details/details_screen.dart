@@ -1,6 +1,6 @@
-import 'package:autentication_login/Screens/details/components/body.dart';
 import 'package:autentication_login/constants.dart';
 import 'package:autentication_login/models/produto.dart';
+import 'package:autentication_login/pages/details/components/body.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
