@@ -2,11 +2,13 @@ class Contato {
   int id;
   String nome;
   String email;
+  String imagem;
 
   Contato(
     this.id,
     this.nome,
     this.email,
+    this.imagem,
   );
 
   Map<String, dynamic> toMap() {
@@ -14,6 +16,7 @@ class Contato {
       'id': id,
       'nome': nome,
       'email': email,
+      'imagem': imagem,
     };
     return map;
   }
@@ -22,5 +25,6 @@ class Contato {
     id = map['id'];
     nome = map['nome'];
     email = map['email'];
+    imagem = map['imagem'];
   }
 }
