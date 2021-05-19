@@ -27,4 +27,9 @@ class Contato {
     email = map['email'];
     imagem = map['imagem'];
   }
+
+  @override
+  String toString() {
+    return "Contato: => (id: $id, nome: $nome, email: $email. imagem: $imagem";
+  }
 }
