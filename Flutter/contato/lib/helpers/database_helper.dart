@@ -79,6 +79,18 @@ class DatabaseHelper {
     }
   }
 
+  Future<List<Contato>> getContatos() async {
+    Database db = await this.database;
+
+    var resultado = await db.query('$contatoTable');
+
+    List<Contato> lista = resultado.isNotEmpty
+        ? resultado.map((c) => Contato.fromMap(c)).toList()
+        : [];
+
+    return lista;
+  }
+
   // atualizar o objeto contato e salva no banco de dados
   Future<int> updateContato(Contato contato) async {
     var db = await this.database;
