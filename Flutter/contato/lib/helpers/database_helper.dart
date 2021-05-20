@@ -92,4 +92,15 @@ class DatabaseHelper {
 
     return resultado;
   }
+
+  // obtem o número de objetos contato no banco de dados
+  Future<int> getCount() async {
+    Database db = await this.database;
+
+    List<Map<String, dynamic>> x =
+        await db.rawQuery('SELECT COUNT (*) from $contatoTable');
+
+    int resultado = Sqflite.firstIntValue(x);
+    return resultado;
+  }
 }
