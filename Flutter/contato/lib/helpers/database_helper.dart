@@ -103,4 +103,9 @@ class DatabaseHelper {
     int resultado = Sqflite.firstIntValue(x);
     return resultado;
   }
+
+  Future close() async {
+    Database db = await this.database;
+    db.close();
+  }
 }
