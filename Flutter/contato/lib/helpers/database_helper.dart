@@ -60,4 +60,22 @@ class DatabaseHelper {
 
     return resultado;
   }
+
+  // retornar um contato pelo id
+  Future<Contato> getContato(int id) async {
+    Database db = await this.database;
+
+    List<Map> maps = await db.query(
+      contatoTable,
+      columns: [colId, colNome, colEmail, colImagem],
+      where: "$colId = ?",
+      whereArgs: [id],
+    );
+
+    if (maps.length > 0) {
+      return Contato.fromMap(maps.first);
+    } else {
+      return null;
+    }
+  }
 }
