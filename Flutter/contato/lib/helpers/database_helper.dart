@@ -78,4 +78,18 @@ class DatabaseHelper {
       return null;
     }
   }
+
+  // atualizar o objeto contato e salva no banco de dados
+  Future<int> updateContato(Contato contato) async {
+    var db = await this.database;
+
+    var resultado = await db.update(
+      contatoTable,
+      contato.toMap(),
+      where: '$colId = ?',
+      whereArgs: [contato.id],
+    );
+
+    return resultado;
+  }
 }
