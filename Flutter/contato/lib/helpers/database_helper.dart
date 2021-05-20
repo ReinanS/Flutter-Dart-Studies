@@ -51,4 +51,13 @@ class DatabaseHelper {
         'CREATE TABLE $contatoTable($colId INTEGER PRIMARY KEY AUTOINCREMENT, '
         '$colNome TEXT, $colEmail TEXT, $colImagem TEXT)');
   }
+
+  // incluir um objeto contato no banco de dados
+  Future<int> insertContato(Contato contato) async {
+    Database db = await this.database;
+
+    int resultado = await db.insert(contatoTable, contato.toMap());
+
+    return resultado;
+  }
 }
