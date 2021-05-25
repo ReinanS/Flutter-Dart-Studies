@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:contatos/helpers/database_helper.dart';
 import 'package:contatos/models/contato.dart';
+import 'package:contatos/views/contato_page.dart';
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqlite_api.dart';
 
@@ -18,8 +19,8 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
 
-    // Contato c = Contato(0, "Maria", "maria@gmail.com", "teste.jpg");
-    // Contato c1 = Contato(0, "João", "joão@gmail.com", "teste2.jpg");
+    // Contato c = Contato(0, "Maria", "maria@gmail.com", null);
+    // Contato c1 = Contato(0, "João", "joão@gmail.com", null);
     // db.insertContato(c);
     // db.insertContato(c1);
 
@@ -42,7 +43,9 @@ class _HomePageState extends State<HomePage> {
       ),
       backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          _exibeContatoPage();
+        },
         child: Icon(Icons.add),
       ),
       body: _body(),
@@ -98,6 +101,14 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      onTap: () {
+        _exibeContatoPage(contato: contatos[index]);
+      },
     );
+  }
+
+  void _exibeContatoPage({Contato contato}) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => ContatoPage(contato: contato)));
   }
 }
