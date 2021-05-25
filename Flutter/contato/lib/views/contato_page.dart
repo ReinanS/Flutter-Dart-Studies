@@ -50,4 +50,47 @@ class _ContatoPageState extends State<ContatoPage> {
       ),
     );
   }
+
+  Widget _buildBody() {
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(10),
+      child: Column(
+        children: [
+          GestureDetector(
+            child: Container(
+              height: 70,
+              width: 70,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: _editaContato.imagem != null
+                      ? FileImage(File(_editaContato.imagem))
+                      : AssetImage("images/pessoa.png"),
+                ),
+              ),
+            ),
+          ),
+          TextField(
+            controller: _nomeController,
+            decoration: InputDecoration(labelText: "Nome"),
+            onChanged: (text) {
+              editado = true;
+              setState(() {
+                _editaContato.nome = text;
+              });
+            },
+          ),
+          TextField(
+            controller: _emailController,
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecoration(labelText: "Email"),
+            onChanged: (text) {
+              editado = true;
+              _editaContato.email = text;
+            },
+          ),
+        ],
+      ),
+    );
+  }
 }
