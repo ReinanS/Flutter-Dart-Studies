@@ -15,6 +15,7 @@ class ContatoPage extends StatefulWidget {
 class _ContatoPageState extends State<ContatoPage> {
   final _nomeController = TextEditingController();
   final _emailController = TextEditingController();
+  final _nomeFocus = FocusNode();
 
   bool editado = false;
   Contato _editaContato;
@@ -44,7 +45,14 @@ class _ContatoPageState extends State<ContatoPage> {
       ),
       body: _buildBody(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          if (_editaContato.nome != null && _editaContato.nome.isNotEmpty) {
+            Navigator.pop(context, _editaContato);
+          } else {
+            _exibeAviso();
+            FocusScope.of(context).requestFocus(_nomeFocus);
+          }
+        },
         child: Icon(Icons.save),
         backgroundColor: Colors.indigo,
       ),
@@ -72,6 +80,7 @@ class _ContatoPageState extends State<ContatoPage> {
           ),
           TextField(
             controller: _nomeController,
+            focusNode: _nomeFocus,
             decoration: InputDecoration(labelText: "Nome"),
             onChanged: (text) {
               editado = true;
@@ -91,6 +100,25 @@ class _ContatoPageState extends State<ContatoPage> {
           ),
         ],
       ),
+    );
+  }
+
+  void _exibeAviso() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Nome"),
+          content: Text("Informe o nome do contato"),
+          actions: <Widget>[
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("Fechar")),
+          ],
+        );
+      },
     );
   }
 }
