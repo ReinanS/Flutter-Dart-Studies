@@ -26,6 +26,10 @@ class _HomePageState extends State<HomePage> {
 
     // db.getContatos().then((lista) => print(lista));
 
+    _exibeTodosContatos();
+  }
+
+  void _exibeTodosContatos() {
     db.getContatos().then((lista) {
       setState(() {
         contatos = lista;
@@ -107,8 +111,18 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _exibeContatoPage({Contato contato}) {
-    Navigator.push(context,
+  void _exibeContatoPage({Contato contato}) async {
+    final contatoRecebido = await Navigator.push(context,
         MaterialPageRoute(builder: (context) => ContatoPage(contato: contato)));
+
+    if (contatoRecebido != null) {
+      if (contato != null) {
+        await db.updateContato(contatoRecebido);
+      } else {
+        await db.insertContato(contatoRecebido);
+      }
+
+      _exibeTodosContatos();
+    }
   }
 }
