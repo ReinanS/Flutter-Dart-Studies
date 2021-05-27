@@ -74,6 +74,7 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: EdgeInsets.all(10),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 height: 70,
@@ -83,24 +84,31 @@ class _HomePageState extends State<HomePage> {
                   image: DecorationImage(
                     image: contatos[index].imagem != null
                         ? FileImage(File(contatos[index].imagem))
-                        : AssetImage("images/pessoa.png"),
+                        : AssetImage("assets/images/pessoa.png"),
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(left: 10)),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    contatos[index].nome ?? "",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Text(
-                    contatos[index].email ?? "",
-                    style: TextStyle(fontSize: 15),
-                  ),
-                ],
+              Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      contatos[index].nome ?? "",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    Text(
+                      contatos[index].email ?? "",
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ],
+                ),
               ),
+              IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () {
+                    _confirmaExclusao(context, contatos[index].id, index);
+                  }),
             ],
           ),
         ),
@@ -124,5 +132,34 @@ class _HomePageState extends State<HomePage> {
 
       _exibeTodosContatos();
     }
+  }
+
+  void _confirmaExclusao(BuildContext context, int contatoId, int index) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Excluir Contato"),
+            content: Text("Confirma a exclusão do Contato"),
+            actions: [
+              TextButton(
+                child: Text("Cancelar"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              TextButton(
+                child: Text("Confirmar"),
+                onPressed: () {
+                  setState(() {
+                    contatos.removeAt(index);
+                    db.deleteContato(contatoId);
+                  });
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        });
   }
 }
