@@ -105,6 +105,19 @@ class DatabaseHelper {
     return resultado;
   }
 
+  // deleta um objeto Contato do banco de dados
+  Future<int> deleteContato(int id) async {
+    var db = await this.database;
+
+    int resultado = await db.delete(
+      contatoTable,
+      where: "$colId = ?",
+      whereArgs: [id],
+    );
+
+    return resultado;
+  }
+
   // obtem o número de objetos contato no banco de dados
   Future<int> getCount() async {
     Database db = await this.database;
