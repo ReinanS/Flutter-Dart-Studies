@@ -2,6 +2,11 @@ import 'dart:io';
 
 import 'package:contatos/models/contato.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+// TO-DO
+// ADICIONAR ESCOLHA DA CAMERA OU DAS FOTOS DA GALERIA
+// INTEGRAR DISCAGEM AUTOMÁTICA AO NÚMERO CADASTRADO
 
 class ContatoPage extends StatefulWidget {
   final Contato contato;
@@ -25,7 +30,7 @@ class _ContatoPageState extends State<ContatoPage> {
     super.initState();
 
     if (widget.contato == null) {
-      _editaContato = Contato(0, "", "", null);
+      _editaContato = Contato(null, "", "", null);
     } else {
       _editaContato = Contato.fromMap(widget.contato.toMap());
 
@@ -73,10 +78,18 @@ class _ContatoPageState extends State<ContatoPage> {
                 image: DecorationImage(
                   image: _editaContato.imagem != null
                       ? FileImage(File(_editaContato.imagem))
-                      : AssetImage("images/pessoa.png"),
+                      : AssetImage("assets/images/pessoa.png"),
                 ),
               ),
             ),
+            onTap: () {
+              ImagePicker.pickImage(source: ImageSource.camera).then((file) {
+                if (file == null) return;
+                setState(() {
+                  _editaContato.imagem = file.path;
+                });
+              });
+            },
           ),
           TextField(
             controller: _nomeController,
